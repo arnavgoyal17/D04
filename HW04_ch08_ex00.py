@@ -20,7 +20,14 @@
 
 
 # Body
-
+def count(inputStr, inputLtr):
+    
+    # initialise count = 0
+    count = 0
+    for letters in inputStr:
+        if letters == inputLtr:
+            count = count + 1
+    print(count)
 
 ###############################################################################
 def main():
@@ -29,6 +36,7 @@ def main():
     # below, passing various strings and letters
     print("Hello World!")
 
+    count("banana", "a")
 
 if __name__ == '__main__':
     main()

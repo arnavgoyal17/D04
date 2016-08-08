@@ -21,15 +21,27 @@
 
 ###############################################################################
 # Imports
-
+import math
 
 # Body
+def eval_loop():
+	# define the output
+	output = "Nothing to Evaluate"
 
+	while True:
+		# prompt for user input
+		usrInput = input("Enter An Input: ")
+		if(usrInput == 'done'):
+			print("Eval =", output)
+			break
+		else:
+			output = eval(usrInput)
+			print("Eval =", output)
 
 ###############################################################################
 def main():
     pass  # Remove this line and uncomment below once eval_loop is defined.
-    # eval_loop()
+    eval_loop()
 
 if __name__ == '__main__':
     main()

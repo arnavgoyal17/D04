@@ -16,9 +16,25 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
+
+# Imports
+import math
+
 def verbing(s):
-    # +++your code here+++
-    return
+    
+    output = ''
+
+    # calculate the length of the string
+    strLength = len(s)
+    if(strLength < 3):
+        output = s
+    else:
+        if(s[-3:].lower() == 'ing'):
+            output = s + 'ly'
+        else:
+            output = s + 'ing'
+
+    return output
 
 
 # E. not_bad
@@ -30,8 +46,21 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    # +++your code here+++
-    return
+
+    output = ''
+
+    # Get the index of the first appearance of 'not'
+    indexNot = s.lower().find('not')
+
+    # Get the index of the first appearance of 'bad'
+    indexBad = s.lower().find('bad')
+
+    if(indexNot > indexBad):
+        output = s
+    else:
+        output = s[:indexNot] + "good" + s[indexBad + 3:]
+    
+    return output
 
 
 # F. front_back
@@ -42,8 +71,36 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    # +++your code here+++
-    return
+    
+    # declare variables
+    front_A = ''
+    front_B = ''
+    back_A = ''
+    back_B = ''
+    index = 0
+
+    length_A = len(a)
+    length_B = len(b)
+
+    if(length_A % 2 == 0):
+        index = int(length_A / 2)
+        front_A = a[:index]
+        back_A = a[index:]
+    else:
+        index = int(math.floor(length_A / 2))
+        front_A = a[:index + 1]
+        back_A = a[index + 1:]
+
+    if(length_B % 2 == 0):
+        index = int(length_B / 2)
+        front_B = b[:index]
+        back_B = b[index:]
+    else:
+        index = int(math.floor(length_B / 2))
+        front_B = b[:index + 1]
+        back_B = b[index + 1:]
+
+    return (front_A + front_B + back_A + back_B)
 
 
 # Simple provided test() function used in main() to print

@@ -24,7 +24,7 @@ def any_lowercase1(s):
 
 
 def any_lowercase2(s):
-    """Explain what is wrong, if anything, here.
+    """The function will always return True, irrespective of the argument passed since we are checking if 'c' is lowercase
     """
     for c in s:
         if 'c'.islower():
@@ -34,7 +34,8 @@ def any_lowercase2(s):
 
 
 def any_lowercase3(s):
-    """Explain what is wrong, if anything, here.
+    """The function will return True only if last character in the string is a lowercase. If any other character is lowercase and the last character 
+    is uppecase, the function would return False
     """
     for c in s:
         flag = c.islower()
@@ -51,7 +52,7 @@ def any_lowercase4(s):
 
 
 def any_lowercase5(s):
-    """Explain what is wrong, if anything, here.
+    """The function returns False whenever it encounters an upper case character
     """
     for c in s:
         if not c.islower():
